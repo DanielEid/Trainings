@@ -1,8 +1,8 @@
 //Functions
 
-var getTodos = async function(todoId) {
+var getPosts = async function(postId) {
     try {
-        let response = await fetch('https://jsonplaceholder.typicode.com/todos/');
+        let response = await fetch('http://localhost:3000/posts/');
         if (response.ok) {
             let responseJson = await response.json();
             console.log(responseJson); //Just for the display of the test
@@ -16,9 +16,9 @@ var getTodos = async function(todoId) {
 }
 
 
-var getTodoId = async function(todoId) {
+var getPostId = async function(postId) {
     try {
-        let response = await fetch('https://jsonplaceholder.typicode.com/todos/' + todoId);
+        let response = await fetch('http://localhost:3000/posts/' + postId);
         if (response.ok) {
             let responseJson = await response.json();
             console.log(responseJson); //Just for the display of the test
@@ -34,7 +34,7 @@ var getTodoId = async function(todoId) {
 var insertPosts = async function() {
     try {
 
-        let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        let response = await fetch('http://localhost:3000/posts', {
             method: "POST",
             body: JSON.stringify({
                 title: 'foo',
@@ -63,7 +63,7 @@ var insertPosts = async function() {
 var insertPostsParameters = async function(bodyPost) {
     try {
 
-        let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        let response = await fetch('http://localhost:3000/posts', {
             method: "POST",
             body: bodyPost,
             headers: {
@@ -88,11 +88,11 @@ var insertPostsParameters = async function(bodyPost) {
    
 //Execution
 
-    getTodos();
-    getTodoId(8888);
+    getPosts();
+    getPostId(8888);
     insertPosts();
     insertPostsParameters(JSON.stringify({
-                title: 'foo',
-                body: 'bar',
-                userId: 1
+                title: 'test0',
+                body: 'body du test0',
+                userId: 11
             }),);
