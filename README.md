@@ -14,4 +14,4 @@ Ce repository contient divers entrainements que j'ai réalisé sur différentes 
     npm run start
     ```
  
- ⇒ Actualitée sur fetch-course: En cours
+ ⇒ Actualitée sur fetch-course: Fini
